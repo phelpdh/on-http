@@ -3,7 +3,11 @@
     ,"@odata.id": "<%= url %>"
     ,"@odata.type": "#EthernetInterface.1.2.0.EthernetInterface"
     <% if (typeof autoneg !== 'undefined') { %>
-        ,"AutoNeg": <%= autoneg %>
+        <% if(autoneg === null) { %>
+            ,"AutoNeg": null
+        <% } else { %>
+            ,"AutoNeg": <%= autoneg %>
+        <% } %>
     <% } %>
     <% if (typeof description !== 'undefined') { %>
         ,"Description": "<%= description %>"
@@ -12,7 +16,11 @@
         ,"FQDN": "<%= fqdn %>"
     <% } %>
     <% if (typeof fullduplex !== 'undefined') { %>
-        ,"FullDuplex": <%= fullduplex %>
+        <% if(fullduplex === null) { %>
+            ,"FullDuplex": null
+        <% } else { %>
+            ,"FullDuplex": <%= fullduplex %>
+        <% } %>
     <% } %>
     <% if (typeof hostname !== 'undefined') { %>
         ,"HostName": "<%= hostname %>"
@@ -82,7 +90,11 @@
         ,"Oem": {}
     <% } %>
     <% if(typeof speedmbps !== 'undefined') { %>
-        ,"SpeedMbps": <%= speedmbps %>
+        <% if(speedmbps === null) { %>
+            ,"SpeedMbps": null
+        <% } else { %>
+            ,"SpeedMbps": <%= speedmbps %>
+        <% } %>
     <% } %>
     <% if(typeof status !== 'undefined') { %>
         ,"Status": {}
